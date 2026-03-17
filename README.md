@@ -121,10 +121,22 @@ Modules:
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 Authors
 
-| **Mrityunjay Sharma** | **Yuvraj Dahariya** | **Vivek Kumar Khandey** |
-| AI Engineer | AI Engineer | AI Engineer |
+1. **Mrityunjay Sharma** 
+🚀 AI Engineer | Data Science Enthusiast
+	•	📧 sharmamrityunjay78@gmail.com
+	•	🔗 GitHub: [https://github.com/yourusername](https://github.com/SharmaJi-29)
+	•	💼 LinkedIn: [https://linkedin.com/in/yourlinkedin](https://www.linkedin.com/in/mrityunjay-sharma-36a401266/)
+
+2. **Yuvraj Dahariya**
+🚀 AI Engineer | Data Science Enthusiast
+	•	📧 sharmamrityunjay78@gmail.com
+	•	🔗 GitHub: [https://github.com/yourusername](https://github.com/yuvraj-25D)
+	•	💼 LinkedIn: https://www.linkedin.com/in/yuvraj-dahariya-53b02a25a/?utm_source=share_via&utm_content=profile&utm_medium=member_android
+
+3. **Vivek Kumar Khandey**
+🚀 AI Engineer | Data Science Enthusiast
 	•	📧 sharmamrityunjay78@gmail.com
 	•	🔗 GitHub: https://github.com/yourusername
 	•	💼 LinkedIn: https://linkedin.com/in/yourlinkedin
