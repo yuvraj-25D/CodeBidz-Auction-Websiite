@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | CodeBidz</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+    <div class="auth-card glass-panel">
+        <div class="auth-tabs">
+            <button id="tab-user" class="auth-tab active">User Portal</button>
+            <button id="tab-admin" class="auth-tab">Admin Portal</button>
+        </div>
+
+        <div class="auth-header">
+            <h1>CodeBidz</h1>
+            <p id="auth-subtitle">Enter your details to start bidding</p>
+        </div>
+
+        <form id="auth-form">
+            <div class="input-group signup-only" style="display: none;">
+                <label>Username</label>
+                <input type="text" id="username" placeholder="coolbidder99">
+            </div>
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="name@company.com" required>
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+            
+            <button type="submit" id="auth-submit-btn" class="btn-primary">Login</button>
+        </form>
+
+        <div class="auth-footer" id="auth-footer-toggle">
+            <p id="toggle-text">Don't have an account? <span id="toggle-auth">Sign Up</span></p>
+        </div>
+    </div>
+
+    <!-- Alert Toast Container -->
+    <div id="toast-container"></div>
+
+    <script type="module">
+        import { login, register } from './js/auth.js';
+
+        const authForm = document.getElementById('auth-form');
+        const toggleBtn = document.getElementById('toggle-auth');
+        const submitBtn = document.getElementById('auth-submit-btn');
+        const subtitle = document.getElementById('auth-subtitle');
+        const usernameGroup = document.querySelector('.signup-only');
+        const usernameInput = document.getElementById('username');
+        
+        const tabUser = document.getElementById('tab-user');
+        const tabAdmin = document.getElementById('tab-admin');
+        const footerToggle = document.getElementById('auth-footer-toggle');
+        
+        // State variables
+        let isLogin = true;
+        let isAdminTab = false; // User tab by default
+
+        // Function to set state to Login
+        const setLoginMode = () => {
+            isLogin = true;
+            submitBtn.innerText = 'Login';
+            subtitle.innerText = isAdminTab ? 'Moderator Access Panel' : 'Enter your details to start bidding';
+            usernameGroup.style.display = 'none';
+            usernameInput.removeAttribute('required');
+            toggleBtn.innerText = 'Sign Up';
+            document.getElementById('toggle-text').firstChild.textContent = "Don't have an account? ";
+        };
+
+        // Function to set state to Signup
+        const setSignupMode = () => {
+            isLogin = false;
+            submitBtn.innerText = 'Create Account';
+            subtitle.innerText = 'Join the auction community';
+            usernameGroup.style.display = 'block';
+            usernameInput.setAttribute('required', 'true');
+            toggleBtn.innerText = 'Login';
+            document.getElementById('toggle-text').firstChild.textContent = "Already have an account? ";
+        };
+
+        toggleBtn.onclick = () => {
+            if (isLogin) {
+                setSignupMode();
+            } else {
+                setLoginMode();
+            }
+        };
+
+        tabUser.onclick = () => {
+            isAdminTab = false;
+            tabUser.classList.add('active');
+            tabAdmin.classList.remove('active');
+            footerToggle.style.display = 'block'; // Users can sign up
+            setLoginMode(); // Reset to login when switching tabs
+        };
+
+        tabAdmin.onclick = () => {
+            isAdminTab = true;
+            tabAdmin.classList.add('active');
+            tabUser.classList.remove('active');
+            footerToggle.style.display = 'none'; // Admins cannot sign up
+            setLoginMode(); // Reset to login when switching tabs
+        };
+
+        // Handle Toast Error UI directly in auth if needed, but better to alert for now
+        function showError(msg) {
+            const container = document.getElementById('toast-container');
+            container.innerHTML = `<div class="toast-alert">${msg}</div>`;
+            setTimeout(() => { container.innerHTML = ''; }, 3000);
+        }
+
+        authForm.onsubmit = async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const roleAttempt = isAdminTab ? 'admin' : 'user';
+
+            try {
+                if (isLogin) {
+                    await login(email, password, roleAttempt);
+                } else {
+                    const username = usernameInput.value;
+                    await register(email, password, username);
+                }
+            } catch (error) {
+                showError(error.message || "Authentication failed.");
+            }
+        };
+    </script>
+</body>
+</html>

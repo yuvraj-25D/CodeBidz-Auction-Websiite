@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | CodeBidz</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Import Font Awesome for quick icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+    <!-- Top Navigation Dashboard -->
+    <nav class="top-nav glass-nav">
+        <div class="nav-brand">
+            <i class="fas fa-gavel"></i>
+            <h1>CodeBidz</h1>
+        </div>
+        
+        <div class="nav-user-info">
+            <div class="user-greeting">
+                <span id="role-badge" class="badge">Role</span>
+                Welcome, <span id="user-display-name">Loading...</span>
+            </div>
+            <div class="credits-display">
+                <i class="fas fa-wallet"></i>
+                <b id="user-credits">0</b> <span class="credit-label">Credits</span>
+            </div>
+            <button id="logout-btn" class="btn-logout"><i class="fas fa-sign-out-alt"></i></button>
+        </div>
+    </nav>
+
+    <!-- Main Container Layout -->
+    <div class="dashboard-container">
+        
+        <!-- Toggle Tabs for User / Auctioneer -->
+        <div class="panel-tabs" id="dashboard-tabs">
+            <button class="panel-tab active" id="tab-marketplace">
+                <i class="fas fa-shopping-cart"></i> Marketplace
+            </button>
+            <button class="panel-tab" id="tab-my-auctions">
+                <i class="fas fa-box-open"></i> My Auctions
+            </button>
+            <button class="panel-tab" id="tab-auctioneer">
+                <i class="fas fa-plus-circle"></i> Create Auction
+            </button>
+        </div>
+
+        <!-- System Alerts Container for Toasts -->
+        <div id="toast-container"></div>
+
+        <!-- 1. Marketplace Panel (User Panel) -->
+        <section id="marketplace-panel" class="dashboard-panel active-panel">
+            <div class="panel-header">
+                <h2>Live Auctions</h2>
+                <p>Browse and bid on active items in real-time.</p>
+            </div>
+            <!-- Grid container for auction cards -->
+            <div id="auction-container" class="auction-grid">
+                <!-- Auction cards injected here via auctions.js -->
+            </div>
+        </section>
+
+        <!-- 2. My Auctions Panel (User Dashboard) -->
+        <section id="my-auctions-panel" class="dashboard-panel" style="display: none;">
+            <div class="panel-header">
+                <h2>My Listings</h2>
+                <p>Manage the auctions you have listed on the platform.</p>
+            </div>
+            <!-- Grid container for auction cards specific to the user -->
+            <div id="my-auction-container" class="auction-grid">
+                <!-- Own auction cards injected here via auctions.js -->
+            </div>
+        </section>
+
+        <!-- 3. Auctioneer / Create Panel -->
+        <section id="auctioneer-panel" class="dashboard-panel" style="display: none;">
+            <div class="panel-header">
+                <h2>Launch New Auction</h2>
+                <p>Create a listing and watch the bids roll in instantly.</p>
+            </div>
+
+            <div class="create-auction-card glass-panel">
+                <form id="create-auction-form">
+                    <div class="input-group full-width">
+                        <label>Image URL (Optional)</label>
+                        <input type="url" id="auc-image" placeholder="https://example.com/image.jpg">
+                    </div>
+                    <div class="input-group">
+                        <label>Item Title</label>
+                        <input type="text" id="auc-title" placeholder="e.g., Vintage Rolex Submariner" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Starting Bid (Credits)</label>
+                        <input type="number" id="auc-min-bid" placeholder="100" min="10" required>
+                    </div>
+                    <div class="input-group full-width">
+                        <label>Item Description</label>
+                        <textarea id="auc-desc" placeholder="Describe the item's condition and history..." required></textarea>
+                    </div>
+                    <div class="input-group full-width">
+                        <label>Duration (Minutes)</label>
+                        <input type="number" id="auc-duration" placeholder="e.g., 60 for 1 hour" min="1" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary btn-large">
+                        <i class="fas fa-rocket"></i> Launch Auction
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- The dashboard logic uses the unified dashboard.js -->
+    <script type="module" src="js/dashboard.js?v=2.0"></script>
+</body>
+</html>
