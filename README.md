@@ -123,23 +123,20 @@ Modules:
 
 ## 👨‍💻 Authors
 
-1. **Mrityunjay Sharma** 
-🚀 AI Engineer | Data Science Enthusiast
-	•	📧 sharmamrityunjay78@gmail.com
-	•	🔗 GitHub: [https://github.com/yourusername](https://github.com/SharmaJi-29)
-	•	💼 LinkedIn: [https://linkedin.com/in/yourlinkedin](https://www.linkedin.com/in/mrityunjay-sharma-36a401266/)
+1. **Mrityunjay Sharma** | AI Engineer | Data Science Enthusiast
+- 📧 sharmamrityunjay78@gmail.com
+- 🔗 GitHub: [Mrityunjay Sharma](https://github.com/SharmaJi-29)
+- 💼 LinkedIn: [Mrityunjay Sharma](https://www.linkedin.com/in/mrityunjay-sharma-36a401266/)
 
-2. **Yuvraj Dahariya**
-🚀 AI Engineer | Data Science Enthusiast
-	•	📧 sharmamrityunjay78@gmail.com
-	•	🔗 GitHub: [https://github.com/yourusername](https://github.com/yuvraj-25D)
-	•	💼 LinkedIn: https://www.linkedin.com/in/yuvraj-dahariya-53b02a25a/?utm_source=share_via&utm_content=profile&utm_medium=member_android
+2. **Yuvraj Dahariya** | AI Engineer | Data Science Enthusiast
+- 📧 yuvrajdahariya.22@gmail.com
+- 🔗 GitHub: [Yuvraj Dahariya](https://github.com/yuvraj-25D)
+- 💼 LinkedIn: [Yuvraj Dahariya](https://www.linkedin.com/in/yuvraj-dahariya-53b02a25a/?utm_source=share_via&utm_content=profile&utm_medium=member_android)
 
-3. **Vivek Kumar Khandey**
-🚀 AI Engineer | Data Science Enthusiast
-	•	📧 sharmamrityunjay78@gmail.com
-	•	🔗 GitHub: https://github.com/yourusername
-	•	💼 LinkedIn: https://linkedin.com/in/yourlinkedin
+3. **Vivek Kumar Khandey** | AI Engineer | Data Science Enthusiast
+- 📧 vk05oct@gmail.com
+- 🔗 GitHub: [Vivek Kumar Khandey](https://github.com/vk05oct-del)
+- 💼 LinkedIn: [Vivek Kumar Khandey](https://www.linkedin.com/in/vivek-khandey-937277263/?utm_source=share_via&utm_content=profile&utm_medium=member_android)
 
 ---
 
